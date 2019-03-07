@@ -9,7 +9,7 @@ WORKDIR    /app
 RUN 	pipenv install --deploy --dev
 ENV        SHELL=/bin/bash
 ENTRYPOINT ["pipenv", "run"]
-CMD ["python"]
+CMD ["python3"]
 #CMD 	   ["/bin/sh"]
 #ENTRYPOINT ["/bin/sh -c"]
 #CMD        ["ls"]
