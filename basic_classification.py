@@ -187,11 +187,11 @@ test_images = test_images / 255.0
 # In[ ]:
 
 
-model = keras.Sequential([
+'''model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
     keras.layers.Dense(128, activation=tf.nn.relu),
     keras.layers.Dense(10, activation=tf.nn.softmax)
-]) 
+]) '''
 
 
 # The first layer in this network, `tf.keras.layers.Flatten`, transforms the format of the images from a 2d-array (of 28 by 28 pixels), to a 1d-array of 28 * 28 = 784 pixels. Think of this layer as unstacking rows of pixels in the image and lining them up. This layer has no parameters to learn; it only reformats the data.
@@ -209,12 +209,12 @@ model = keras.Sequential([
 # In[ ]:
 
 
-'''json_file = open("./basic_classification.json", 'r')
+json_file = open("./basic_classification.json", 'r')
 model_json = json_file.read()
 json_file.close()
 model = model_from_json(model_json)
 model.load_weights("./basic_classification.h5")
-print("loaded model ") '''
+print("loaded model ")
 model.compile(optimizer='adam', 
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
@@ -233,12 +233,12 @@ model.compile(optimizer='adam',
 # In[ ]:
 
 
-model.fit(train_images, train_labels, epochs=5)
+'''model.fit(train_images, train_labels, epochs=5)
 model_json = model.to_json()
 with open("./basic_classification.json", "w") as jf:
     jf.write(model_json)
 
-model.save_weights("./basic_classification.h5")
+model.save_weights("./basic_classification.h5")'''
 
 # As the model trains, the loss and accuracy metrics are displayed. This model reaches an accuracy of about 0.88 (or 88%) on the training data.
 
@@ -263,8 +263,7 @@ print('Test accuracy:', test_acc)
 # In[ ]:
 
 
-predictions = model.predict(test_images)
-
+predictions = model.predict(test_images) 
 
 # Here, the model has predicted the label for each image in the testing set. Let's take a look at the first prediction:
 
