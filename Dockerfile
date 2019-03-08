@@ -17,6 +17,7 @@ COPY      . /app
 WORKDIR    /app
 RUN pip3 install numpy
 RUN pipenv install --deploy --dev
+COPY ../test_example.py /app
 #ENTRYPOINT ["pipenv", "run"]
 #CMD ["python3"]
 CMD        ["/bin/sh"]
