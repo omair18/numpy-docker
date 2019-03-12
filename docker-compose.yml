@@ -3,7 +3,7 @@ version: '2.3'
 services:
   app:
     build: .
-    runtime: nvidia
+    #runtime: nvidia
     command: nvidia-smi
     command: ls
     command: py.test -s
